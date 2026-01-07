@@ -1,0 +1,15 @@
+# 后端
+backend/node_modules/
+backend/.env
+backend/dist/
+
+# 前端（React/Vite 等）
+frontend/node_modules/
+frontend/.env
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# 系统
+.DS_Store
+Thumbs.db

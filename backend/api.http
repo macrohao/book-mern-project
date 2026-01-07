@@ -1,0 +1,32 @@
+### add a book
+POST  http://localhost:5555/books
+Content-Type: application/json
+
+{
+    "title":"被讨厌的勇气",
+    "author":"pipi",
+    "publishYear":2021
+}
+
+
+### get books
+GET http://localhost:5555/books
+
+
+
+### get a book by id
+GET http://localhost:5555/books/695e11827ee43bc1c8378a4d
+
+### update book
+PUT  http://localhost:5555/books/695e1a63895a6776b4934ff4
+Content-Type: application/json
+
+{
+    "title":"认知觉醒",
+    "author":"benben",
+    "publishYear":2021
+}
+
+
+### delete a book by id
+DELETE http://localhost:5555/books/695e1a65895a6776b4934ff8
