@@ -20,12 +20,8 @@ router.post("/" ,async (req,res)=>{
             author:req.body.author,
             publishYear:req.body.publishYear
         }
-        const saveBook = await Book.create(newBook)
-        return res.status(200).send({
-            code:200,
-            message:"Book is created!",
-            data:saveBook,
-        })
+        const book = await Book.create(newBook)
+        return res.status(200).send(book)
     } catch (error) {
         console.log(err.message);
         return res.status(400).send({
@@ -61,11 +57,7 @@ router.get("/:id",async (req,res)=>{
     try {
         const {id} = req.params
         const book = await Book.findById(id)
-        return res.status(200).send({
-            code:200,
-            message:"all books is geted",
-            data:book
-        })
+        return res.status(200).send(book)
     } catch (error) {
         console.log(error.message);
         return res.status(400).send({
@@ -115,12 +107,12 @@ router.delete("/:id" ,async (req,res)=>{
                 message:"book is not found",
             })
         }
-        return res.status(400).send({
+        return res.status(200).send({
             code:200,
             message:"book is deleted",
         })
     } catch (error) {
-        
+        console.log(error);
     }
 })
 
